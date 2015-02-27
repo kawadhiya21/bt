@@ -1,0 +1,19 @@
+{
+  "name": "bt",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^0.8.1",
+    "migrashun": "^0.1.0",
+    "mysql": "^2.5.5"
+  },
+  "devDependencies": {
+    "mocha": "^2.1.0"
+  }
+}

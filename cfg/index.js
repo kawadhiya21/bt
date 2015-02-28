@@ -1,4 +1,5 @@
 var defaults = {
+    'appname': 'bt',
     'bcrypt.saltstrength': 10,
 
     'mysql.db.host': 'localhost',
@@ -13,7 +14,10 @@ var defaults = {
     'mysql.migrations.dir': __dirname + '/../deltas',
 
     // Table name in which last migration info will be saved
-    'mysql.migrations.table': 'last_migration'
+    'mysql.migrations.table': 'last_migration',
+
+    // App will run on this port
+    'port': 8080
 };
 
 module.exports = defaults;

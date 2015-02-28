@@ -1,6 +1,7 @@
 var cfg = require('./cfg');
 var Migrashun = require('migrashun');
 var mysql = require('./mysql');
+var log = require('./log');
 var param = null;
 var command = 'up';
 
@@ -72,7 +73,7 @@ var m = new Migrashun(
 
     // ITER
     function (fname, direction) {
-        console.log('#', direction, ':', fname);
+        log.info('#', direction, ':', fname);
     }
 );
 
@@ -96,7 +97,7 @@ switch (command) {
                 exit(err, 1);
             }
 
-            console.log('Created new migration:', fname);
+            log.info('Created new migration:', fname);
             exit();
         });
         break;
@@ -108,19 +109,19 @@ switch (command) {
                 exit(err, 1);
             }
 
-            console.log('All migrations complete');
+            log.info('All migrations complete');
             exit();
         });
         break;
 
     default:
-        console.error('Invalid command');
+        log.error('Invalid command');
         exit(new Error('Invalid command'), 1);
 }
 
 function exit(err, code) {
     if (err) {
-        console.error(err.stack);
+        log.fatal(err);
     }
 
     process.exit(code || 0);

@@ -10,6 +10,9 @@
   "license": "ISC",
   "dependencies": {
     "bcrypt": "^0.8.1",
+    "bunyan": "^1.3.4",
+    "express": "^4.12.0",
+    "grunt": "^0.4.5",
     "migrashun": "^0.1.0",
     "mysql": "^2.5.5"
   },

@@ -2,7 +2,6 @@ var express = require('express');
 var exphbs = require('express-handlebars');
 var cfg = require('./cfg');
 var log = require('./log');
-var router = require('./router');
 var app = express();
 
 
@@ -28,14 +27,16 @@ app.use(function (req, res, next) {
 });
 
 
-// load routes
-app.use(router);
+// load page
+app.get('/', function (req, res) {
+   res.render('index');
+});
 
 
 // handle 404
 app.use(function (req, res) {
     log.warn('Resource not found: %s: %s', req.method, req.url);
-    res.status(400);
+    res.status(404);
     res.send('404!');
 });
 
